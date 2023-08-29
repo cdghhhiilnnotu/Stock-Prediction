@@ -38,8 +38,6 @@ def load_data(filename):
                     # Get List Low
                     if(myListLow[len(myListLow) - 1] > row[4]):
                         myListLow[len(myListLow) - 1] = row[4]
-                # if len(myListTotal) == 10:
-                #     break
             else:
                 myListDate.append(row[1].split(' ')[0])
                 myListOpen.append(row[2])
@@ -69,11 +67,8 @@ def Plot_Data(filename, idxFig):
     listClose = [float(item[4]) for item in listTotal]
 
     plt.subplot(2,2,idxFig)
-    # plt.plot(listDate, listOpen, label="Open", color="green", marker="o", mfc="black", ms=2, linewidth=1)
-    # plt.plot(listDate, listOpen, label="Open", color="green")
     plt.plot(listDate, listHigh, label="High", color="blue", linewidth=1)
     plt.plot(listDate, listLow, label="Low", color="red", linewidth=1)
-    # plt.plot(listDate, listClose, label="Open", color="yellow")
     plt.title(filename)
     plt.xlabel("Date")
     plt.ylabel("Value")
